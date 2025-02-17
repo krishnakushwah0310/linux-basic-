@@ -1,7 +1,6 @@
-
-### Table of Contents:
+##  Table of Contents:
 1. **What is Linux?**
-2. **Installing Linux**
+2. **CentOS Installation in VirtualBox**
 3. **Linux Distributions**
 4. **Linux Filesystem Structure**
 5. **Basic Linux Commands**
@@ -15,31 +14,99 @@
 
 ---
 
-### 1. **What is Linux?**
+##  1. **What is Linux?**
 
 Linux is an open-source operating system (OS) that's based on the Linux kernel. It's used in servers, desktops, mobile devices, and embedded systems. Unlike Windows or macOS, Linux is free to use, modify, and distribute. It’s known for being secure, stable, and versatile.
 
 ---
 
-### 2. **Installing Linux**
+##  2.**CentOS Installation in VirtualBox**
 
-To begin using Linux, you'll need to install it. You can install a Linux distribution (distro) on your computer or in a virtual machine. Popular distros include:
+## 📹 **Installation Video**
+To watch the full installation video, click on the link below:  
+### *[CentOS Installation in VirtualBox](https://www.youtube.com/watch?v=ZqyVrfW2c6g)*
 
-- **Ubuntu**: User-friendly, ideal for beginners.
-- **CentOS**: More enterprise-focused, stable.
-- **Debian**: A universal base for many distros.
-- **Fedora**: Cutting-edge software with modern features.
-
-#### Steps to install Linux:
-
-1. **Download a Linux Distro**: Go to the official website of the distro you want to install (e.g., Ubuntu.com, centos.org).
-2. **Create a Bootable USB**: Use tools like Rufus (on Windows) or dd (on Linux) to create a bootable USB drive with the Linux ISO.
-3. **Boot from USB**: Restart your computer and boot from the USB drive.
-4. **Install**: Follow the installation prompts to set up the OS. This will include disk partitioning, timezone selection, and user creation.
 
 ---
 
-### 3. **Linux Distributions**
+
+Follow the steps below to successfully install CentOS in VirtualBox. This guide will walk you through each step with clear instructions.
+
+---
+
+### *Step 1: Download CentOS ISO*
+1. Visit the [CentOS website](https://www.centos.org/download/).
+2. Download the *ISO image* that corresponds to your system architecture (e.g., x86_64).
+   - Choose the *Minimal ISO* for a lighter installation or the *DVD ISO* for a complete installation.
+
+---
+
+### *Step 2: Create a New Virtual Machine in VirtualBox*
+1. *Open VirtualBox* and click on *New* to start creating a new VM.
+2. Set the *Name* of your VM (e.g., "CentOS VM").
+3. Choose *Linux* for the *Type* and *Red Hat (64-bit)* for the *Version*.
+4. Set *Memory (RAM)* allocation: 2GB or more is recommended for optimal performance.
+   - Example: 2048MB (2GB) or 4096MB (4GB) depending on your system’s capacity.
+
+---
+
+### *Step 3: Configure the Virtual Machine’s Storage*
+1. *Go to the Storage tab* in VM settings.
+2. Under *Controller: IDE, click **Empty*.
+3. *Attach the CentOS ISO*:
+   - Click the *disk icon* next to *Optical Drive* and select *Choose a disk file*.
+   - Browse and select the *CentOS ISO* you downloaded in Step 1.
+
+---
+
+### *Step 4: Start the Virtual Machine*
+1. *Click Start* to boot the VM from the attached CentOS ISO.
+2. The CentOS installation screen should now appear. Select *Install CentOS* and press *Enter* to begin the installation process.
+
+---
+
+### *Step 5: Install CentOS*
+1. *Language and Keyboard Layout*:
+   - Select your desired *Language* and *Keyboard Layout*.
+2. *Installation Destination*:
+   - Select the hard disk where CentOS will be installed (usually the default one).
+   - You can choose *Automatic Partitioning* for simplicity.
+3. *Network Configuration*:
+   - Set up your *Network* and ensure it’s *enabled* for internet access.
+4. *User Configuration*:
+   - Set a *root password* and create a *user account* with administrative privileges.
+5. Once the installation completes, click *Reboot*.
+
+---
+
+### *Step 6: Post-Installation Setup*
+1. *Initial Boot*:
+   - After rebooting, log in using the credentials you created during the installation.
+2. *Update CentOS*:
+   - Open the *Terminal* and run the following command to update CentOS:
+     
+     sudo yum update -y
+     
+3. *Install Additional Software*:
+   - Install any necessary software packages using yum or dnf (for newer CentOS versions).
+
+---
+
+### *Additional Tips*
+- *Enable Network Adapter*:
+   - If you don’t have internet access, ensure your *network settings* are configured correctly. Use *NAT* or *Bridged Adapter* to enable internet.
+- *Install VirtualBox Guest Additions*:
+   - For better integration (shared folders, enhanced graphics), install *VirtualBox Guest Additions* after logging into CentOS.
+   - You can find the option to install it in *Devices > Insert Guest Additions CD image*.
+
+---
+
+###⚡ *Congratulations!* 
+You have successfully installed CentOS on VirtualBox! Enjoy exploring your new virtual machine and getting familiar with CentOS.
+
+---
+
+##  3. **Linux Distributions**
 
 A Linux **distribution** (or **distro**) is a version of Linux that includes the Linux kernel and various software packages to make the OS functional.
 
@@ -50,7 +117,7 @@ A Linux **distribution** (or **distro**) is a version of Linux that includes the
 
 ---
 
-### 4. **Linux Filesystem Structure**
+##  4. **Linux Filesystem Structure**
 
 In Linux, everything is a file, and the entire filesystem is organized in a hierarchical tree-like structure, starting from the root directory (/). 
 
@@ -66,7 +133,7 @@ In Linux, everything is a file, and the entire filesystem is organized in a hier
 
 ---
 
-### 5. **Basic Linux Commands**
+##  5. **Basic Linux Commands**
 
 Here are some basic commands that every Linux user should know:
 
@@ -95,7 +162,7 @@ Here are some basic commands that every Linux user should know:
 
 ---
 
-### 6. **Understanding the Linux Terminal**
+##  6. **Understanding the Linux Terminal**
 
 The **terminal** is the command-line interface (CLI) in Linux. It's where you type commands to interact with the system.
 
@@ -108,7 +175,7 @@ The **terminal** is the command-line interface (CLI) in Linux. It's where you ty
 
 ---
 
-### 7. **Working with Files and Directories**
+##  7. **Working with Files and Directories**
 
 #### Navigating Directories:
 
@@ -135,7 +202,7 @@ rm file.txt              # Deletes the file
 
 ---
 
-### 8. **Permissions and Ownership**
+##  8. **Permissions and Ownership**
 
 Linux uses a system of permissions to control who can read, write, and execute files.
 
@@ -163,7 +230,7 @@ File permissions are displayed as a string of characters like -rwxr-xr--. The fi
 
 ---
 
-### 9. **Package Management**
+##  9. **Package Management**
 
 In Linux, software is managed through **package managers**. Package managers allow you to install, update, and remove software.
 
@@ -178,7 +245,7 @@ In Linux, software is managed through **package managers**. Package managers all
 
 ---
 
-### 10. **Process Management**
+##  10. **Process Management**
 
 Processes in Linux are managed through commands that allow you to see running programs and control their execution.
 
@@ -195,7 +262,7 @@ Processes in Linux are managed through commands that allow you to see running pr
 
 ---
 
-### 11. **Networking Commands**
+##  11. **Networking Commands**
 
 Linux provides various networking tools for configuration and troubleshooting:
 
@@ -209,7 +276,7 @@ Linux provides various networking tools for configuration and troubleshooting:
 
 ---
 
-### 12. **Shell Scripting Basics**
+##  12. **Shell Scripting Basics**
 
 Shell scripting allows you to automate tasks using a sequence of commands.
 
@@ -229,3 +296,7 @@ echo "Hello, World!"
 bash
 chmod +x script.sh    # Makes the script executable
 ./script.sh           # Runs the script
+
+---
+
+##      **by krishna kushwah**          *[LinkedIn](https://www.linkedin.com/in/krishna-kushwah-382812317/)*
